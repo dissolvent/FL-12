@@ -25,11 +25,11 @@
               <a href="#blockquotes"><b>Blockquotes</b></a>
               <a href="#registration-form"><b>Registration</b></a>
             </nav>
-
           </header>
 
           <main>
             <section>
+              <h2 hidden>Placeholder</h2>
               <hr>
               <p>
                 Lorem ipsum dolor sit amet,
@@ -105,7 +105,7 @@ both      <b>spaces</b> and
             </pre>
 
             <h3>This is code</h3>
-            <code><pre>
+            <pre>
 
 .flex {
   display: flex;
@@ -113,8 +113,7 @@ both      <b>spaces</b> and
   aliign-items: center;
 }
 
-
-</pre></code>
+            </pre>
             </section>
 
             <section id="types-of-lists">
@@ -154,8 +153,8 @@ both      <b>spaces</b> and
                   <dd>JavaScript is a scripting languages, primarily used on the Web.</dd>
               </dl>
 
-              <span>Select for learning</span>
-                <select>
+              <label for="learning-list">Select for learning</label>
+                <select id='learning-list'>
                   <option value="JS">JS</option>
                   <option value="HTML">HTML</option>
                   <option value="CSS">CSS</option>
@@ -214,14 +213,15 @@ both      <b>spaces</b> and
             </section>
 
             <section id="registration-form">
+              <h2 hidden>Registration</h2>
               <hr>
-              <form action="index.html" method="post">
+              <form action="#" method="post">
                 <label>Username:
                   <input type="text" name="username">
                 </label>
                 <br>
                 <label>Email:
-                  <input type="text" name="email">
+                  <input type="email" name="email">
                 </label>
                 <br>
                 <label>Password:
