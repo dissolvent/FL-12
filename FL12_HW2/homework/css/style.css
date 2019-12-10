@@ -201,14 +201,14 @@
     background-color: lightskyblue;
   }
 
-  .contact-form textarea.form-control {
+  .contact-form textarea {
     border: 1px solid lightskyblue;
     background: url('../img/email-icon.png') no-repeat;
     background-position: bottom 10px right 10px;
     background-size: 30px auto;
   }
 
-  .contact-form textarea.form-control:focus {
+  .contact-form textarea:focus {
     box-shadow: none;
   }
 
