@@ -1,1 +1,45 @@
-// Write your styles here
+body {
+    margin: 0;
+    width: 1920px;
+}
+
+header {
+  min-height: 710px;
+  width: 100%;
+  margin: auto;
+  padding-top: 10px;
+  background: $headerBackgroundImage no-repeat center;
+  background-size: cover;
+  border-bottom-right-radius: 40%;
+}
+
+.header-wrap  {
+    margin: 0 0 0 190px;
+    max-width: 670px;
+
+    .landing-logo {
+      display: inline-block;
+      padding-left: 2px;
+      padding-top: 7px;
+      width: 150px;
+      height: 50px;
+
+      p {
+        display: inline-block;
+        margin: 0 0 0 10px ;
+        font-family: Hind, serif;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      span {
+        display: block;
+        font-weight: 400;
+        font-size: 0.4em;
+        text-align: center;
+      }
+    }
+  }
+
+
