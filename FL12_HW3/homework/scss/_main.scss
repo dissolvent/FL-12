@@ -11,6 +11,18 @@ header {
   background: $headerBackgroundImage no-repeat center;
   background-size: cover;
   border-bottom-right-radius: 40%;
+
+  // &::after {
+  //   content: '';
+  //   display: inline-block;
+  //   position: relative;
+  //   z-index: 0;
+  //   bottom: $wordHighlightingHeight;
+  //   left: 120px;
+  //   width: 100px;
+  //   height: $wordHighlightingHeight;
+  //   background-color: #14a0c7;
+  // }
 }
 
 .header-wrap  {
@@ -44,20 +56,56 @@ header {
 }
 
 .header_heading {
-  margin: 72px 0;
+  position: relative;
+  z-index: 1;
+  margin: 72px 0 0;
+  height: 145px;
   font-family: Source Sans Pro, sans-serif;
   font-stretch: expanded;
   font-size: 72px;
   font-weight: 700;
   line-height: 1em;
 
-  // &::after {
-  //   content: '';
-  //   float: left;
-  //   width: 100px;
-  //   height: 30px;
-  //   background-color: #14a0c7;
-  // }
+  &::after {
+    content: '';
+    display: block;
+    position: relative;
+    z-index: -1;
+    bottom: $wordHighlightingHeight;
+    left: 0px;
+    width: 302px;
+    height: $wordHighlightingHeight;
+    background-color: #14a0c7;
+  }
 }
 
+.header_text {
+  margin-top: 34px;
+  margin-bottom: 80px;
+  white-space: pre-line;
+  height: 100px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
 
+.header_button {
+  width: 142px;
+  height: 48px;
+  border: none;
+  border-radius: 3px;
+  background-color: #699900;
+  color: #f2f3f7;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  vertical-align: center;
+}
+
+.login {
+  margin-left: 150px;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 19.5px;
+  font-weight: 600;
+  color: #fff;
+  // find trick for underline. make it thicker
+}
