@@ -15,31 +15,49 @@ header {
 
 .header-wrap  {
     margin: 0 0 0 190px;
-    max-width: 670px;
-
-    .landing-logo {
-      display: inline-block;
-      padding-left: 2px;
-      padding-top: 7px;
-      width: 150px;
-      height: 50px;
-
-      p {
-        display: inline-block;
-        margin: 0 0 0 10px ;
-        font-family: Hind, serif;
-        font-size: 24px;
-        font-weight: 600;
-        text-align: center;
-      }
-
-      span {
-        display: block;
-        font-weight: 400;
-        font-size: 0.4em;
-        text-align: center;
-      }
-    }
+    padding: 6px 0 0 2px;
+    max-width: 660px;
+    font-family: Hind, sans-serif;
+    color: #2c2f3c;
   }
+
+.landing-logo {
+  width: 150px;
+  height: 50px;
+
+  p {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  span {
+    display: block;
+    position: relative;
+    top: -6px;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+.header_heading {
+  margin: 72px 0;
+  font-family: Source Sans Pro, sans-serif;
+  font-stretch: expanded;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1em;
+
+  // &::after {
+  //   content: '';
+  //   float: left;
+  //   width: 100px;
+  //   height: 30px;
+  //   background-color: #14a0c7;
+  // }
+}
 
 
