@@ -1,9 +1,19 @@
-// images
-$headerBackgroundImage: url('../img/m-h-day.jpg');
+$logo-font: Hind, sans-serif;
 
-// fonts
-$fontHind: Hind, sans-serif;
-$fontSourceSansPro: Source Sans Pro, sans-serif;
+// header
+$header-background-image: url('../img/m-h-day.jpg');
+$header-font: Hind, sans-serif;
+$header-heading-font: Source Sans Pro, sans-serif;
 
 // cards
-$sectionCardWidth: 1075px;
+$section-card-text-font: Hind, sans-serif;
+$section-headings-font: Source Sans Pro, sans-serif;
+$section-card-width: 1075px;
+
+//button
+$btn-font: Source Sans Pro, sans-serif;
+$btn-background: #699900;
+
+$footer-background-color: #21232e;
+$footer-color: #c0c3ce;
+$footer-font: Hind, sans-serif;
