@@ -1,22 +1,22 @@
-@mixin logoHikingClub {
+@mixin logoHikingClub($header-logo-font, $p-position-relative-bottom ,$header-logo-span-top-calibration: 0px) {
   width: 150px;
   height: 50px;
+  
 
   p {
     display: inline-block;
+    position: relative;
+    bottom: $p-position-relative-bottom;
     margin: 0 0 0 10px;
-    font-size: 24px;
-    font-weight: 600;
+    font: $header-logo-font;
     text-align: center;
   }
 
   span {
     display: block;
     position: relative;
-    top: -6px;
-    font-weight: 600;
-    font-size: 10px;
-    text-align: center;
+    top: $header-logo-span-top-calibration;
+    font-size: 41%;
   }
 }
 
@@ -32,8 +32,13 @@
   font-weight: 600;
 }
 
+@mixin link($font, $color) {
+  font: $font;
+  color: $color;
+}
+
 @mixin textHighlight($bottom: 0px, $left: 0px, $width: 0px, $height: 0px, 
-                     $background-color:#14a0c7) {
+                     $background-color: #14a0c7) {
     content: '';
     display: block;
     position: relative;
@@ -61,10 +66,10 @@
   }
 }
 
-
 body {
     margin: 0;
     width: 1920px;
+    background-color: $body-background-color;
 }
 
 header {
@@ -82,11 +87,11 @@ header {
     padding: 6px 0 0 2px;
     max-width: 660px;
     font-family: $header-font;
-    color: #2c2f3c;
+    color: $header-text-color;
   }
 
 .landing-logo {
-  @include logoHikingClub;
+  @include logoHikingClub($header-logo-font, $header-p-relative-position-bottom, $header-logo-span-top);
 }
 
 .header_heading {
@@ -100,7 +105,7 @@ header {
   line-height: 1em;
 
   &::after {
-    @include textHighlight(50px, 0px, 302px, 50px);
+    @include textHighlight(50px, 0px, 302px, 50px, $text-highlight-color);
   }
 }
 
@@ -109,6 +114,7 @@ header {
   margin-bottom: 80px;
   white-space: pre-line;
   height: 100px;
+  font-family: $header-header-text-font;
   line-height: 24px;
   letter-spacing: 0.2px;
 }
@@ -119,12 +125,7 @@ header {
 
 .login {
   margin-left: 150px;
-  font-family: Source Sans Pro, sans-serif;
-  font-size: 19.5px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration-line: underline;
-  // find trick for underline. make it thicker
+  @include link($header-login-link-font, $header-login-link-color);
 }
 
 .section_text {
@@ -137,10 +138,10 @@ header {
   text-align: center;
   font-size: 42px;
   font-weight: 600;
-  color: #2c2f3c;
+  color: $section-text-color;
 
   &::after {
-    @include textHighlight(58px, ((1920px / 2) + 7px), 190px, 50px);
+    @include textHighlight(58px, ((1920px / 2) + 7px), 190px, 50px, $text-highlight-color);
   }
 }
 
@@ -158,7 +159,7 @@ header {
   margin-bottom: 25px;
   border-radius: 5px;
   padding: 20px;
-  background-color: #21232e;
+  background-color: $section-card-backgournd-color;
 }
 
 .section_card_right_container {
@@ -191,13 +192,11 @@ header {
   .section_link {
     display: block;
     text-align: center;
-    font-size: 15px;
+    @include link($section-card-link-font, $section-card-link-color);
     letter-spacing: 0.65px;
-    font-family: $section-card-text-font;
-    color: #c0c3c4;
   }
 
-
+// make loop for this
 .section_card:nth-child(1) {
   @include sectionCard(430px, 285px);
 }
@@ -214,7 +213,7 @@ header {
   position: relative;
   margin: 0 auto;
   top: 110px;
-  background: linear-gradient(45deg, #62911a, #305fcb);
+  background: $section-banner-background;
   height: 145px;
   width: 1200px;
   border-radius: 5px;
@@ -246,7 +245,7 @@ header {
   color: #2c2f3c;
 
   &::after {
-    @include textHighlight(53px, 122px, 65px, 50px);
+    @include textHighlight(53px, 122px, 65px, 50px, $text-highlight-color);
   }
 }
 
