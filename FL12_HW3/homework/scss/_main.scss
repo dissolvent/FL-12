@@ -1,8 +1,11 @@
+@function rightContainerWidth($img-width, $img-heigh) {
+  @return ($section-card-width - $img-width - 40px);
+}
+
 @mixin logoHikingClub($header-logo-font, $p-position-relative-bottom ,$header-logo-span-top-calibration: 0px) {
   width: 150px;
   height: 50px;
   
-
   p {
     display: inline-block;
     position: relative;
@@ -48,10 +51,6 @@
     width: $width;
     height: $height;
     background-color: $background-color;
-}
-
-@function rightContainerWidth($img-width, $img-heigh) {
-  @return ($section-card-width - $img-width - 40px);
 }
 
 @mixin sectionCard($img-width, $img-heigh) {
@@ -170,7 +169,6 @@ header {
 }
 
 .section_card_heading {
-    // check color
     color: #fff;
     font-family: $section-headings-font;
     font-size: 24px;
@@ -196,17 +194,20 @@ header {
     letter-spacing: 0.65px;
   }
 
-// make loop for this
+// try loop for this
 .section_card:nth-child(1) {
-  @include sectionCard(430px, 285px);
+  @include sectionCard(map-get($section-card-img-1, "width"),
+                       map-get($section-card-img-1, "height"));
 }
 
 .section_card:nth-child(2) {
-  @include sectionCard(416px, 275px);
+  @include sectionCard(map-get($section-card-img-2, "width"),
+                       map-get($section-card-img-2, "height"));
 }
 
 .section_card:nth-child(3) {
-  @include sectionCard(460px, 305px);
+  @include sectionCard(map-get($section-card-img-3, "width"),
+                       map-get($section-card-img-3, "height"));
 }
 
 .section_banner {
@@ -242,7 +243,7 @@ header {
   text-align: center;
   font-size: 31px;
   font-weight: 700;
-  color: #2c2f3c;
+  color: $section-banner-heading-color;
 
   &::after {
     @include textHighlight(53px, 122px, 65px, 50px, $text-highlight-color);

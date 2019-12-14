@@ -1,6 +1,10 @@
 $body-background-color: #21232e;
 
-// header
+$text-highlight-color: #ff4e33;
+
+$btn-font: Source Sans Pro, sans-serif;
+$btn-background: #e3ac00;
+
 $header-logo-font: 600 24px Fresca, sans-serif;
 $header-text-color: #fff;
 $header-header-text-font: Fresca, sans-serif;
@@ -12,9 +16,6 @@ $header-heading-font: Source Sans Pro, sans-serif;
 $header-login-link-font: 600 19.5px Source Sans Pro, sans-serif;
 $header-login-link-color: #fff;
 
-$text-highlight-color: #ff4e33;
-
-// cards
 $section-text-color: #fff;
 $section-card-backgournd-color: #3b3f50;
 $section-card-text-font: Fresca, sans-serif;
@@ -22,18 +23,14 @@ $section-headings-font: Source Sans Pro, sans-serif;
 $section-card-width: 1075px;
 $section-card-link-font: 400 15px Hind, sans-serif;
 $section-card-link-color: #c0c3c4;
-$section-banner-background: linear-gradient(45deg, #d99b0b, #922c52);
+$section-banner-heading-color: #fff;
+$section-banner-background: linear-gradient(45deg, #e3ac01, #922c52);
 
+$section-card-img-1: (width: 442px, height: 294px);
+$section-card-img-2: (width: 429px, height: 284px);
+$section-card-img-3: (width: 472px, height: 315px);
 
-$section-card-img-1: (430px, 285px); //
-$section-card-img-2: (416px, 275px); // 
-$section-card-img-3: (460px, 305px); //
-
-//button
-$btn-font: Source Sans Pro, sans-serif;
-$btn-background: #e3ac00;
-
-$footer-background-color: #21232e;
-$footer-color: #c0c3ce;
-$footer-font: Hind, sans-serif;
+$footer-background-color: #3b3f50;
+$footer-color: #d1d1d1;
+$footer-font: Fresca, sans-serif;
 
