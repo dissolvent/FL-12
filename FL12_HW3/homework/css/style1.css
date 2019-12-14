@@ -40,7 +40,7 @@ header {
   z-index: 1;
   margin: 72px 0 0;
   height: 145px;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 72px;
   font-weight: 700;
   line-height: 1em; }
@@ -71,13 +71,13 @@ header {
   border-radius: 3px;
   background-color: #699900;
   color: #f2f3f7;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-weight: 600; }
 
 .login {
   margin-left: 150px;
-  font: 600 19.5px Source Sans Pro, sans-serif;
+  font: 600 19.5px "Source Sans Pro", sans-serif;
   color: #fff; }
 
 .section_text {
@@ -86,7 +86,7 @@ header {
   margin-bottom: 0;
   height: 85px;
   z-index: 1;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   font-size: 42px;
   font-weight: 600;
@@ -125,7 +125,7 @@ header {
 
 .section_card_heading {
   color: #fff;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   font-weight: 600;
   text-align: center; }
@@ -189,7 +189,7 @@ header {
   border-radius: 3px;
   background-color: #699900;
   color: #f2f3f7;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-weight: 600;
   position: relative;
@@ -202,7 +202,7 @@ header {
   margin-bottom: 0;
   height: 35px;
   z-index: 1;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   font-size: 31px;
   font-weight: 700;
