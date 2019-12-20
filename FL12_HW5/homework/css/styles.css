@@ -13,6 +13,8 @@
 body {
   font-family: roboto;
   font-size: 1.0em;
+  background-color: #0b192f;
+  color: #fff;
 }
 .post-1 {
 	background: #9d27b0;
@@ -27,21 +29,21 @@ body {
 	background: #9d27b0;
 }
 .post-5 {
-	background: #2d95bb;
+  background: #2d95bb;
+}
+
+.menu:hover, .header-heading:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
   body {
     margin: 0 2% 0;
-    background-color: var(--bg-color--dark);
-    color: #fff;
+    display: grid;
+    grid-template-columns: 100%;
   }
 
-  .menu:hover, .header-heading:hover {
-    cursor: pointer;
-  }
-
-  .header, .hero-section, .blog, .blog article, .news {
+  .blog .post, .news {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -55,6 +57,7 @@ body {
   }
 
   .menu {
+    margin: auto; 
     padding-top: 8%;
     width: 18px;
     height: 15px;
@@ -75,6 +78,7 @@ body {
   }
 
   .header-heading {
+    text-align: center;
     padding: 10% 0 10%;
     letter-spacing: -2px;
     font-weight: 300;
@@ -90,48 +94,44 @@ body {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    padding: 10% 0 10%;
     margin-bottom: 15px;
   }
 
-  .blog-heading {
-    width: 80%;
-    margin-top: 2em;
-    font-size: 2.5em;
+  .post-heading {
+    margin: 0.5em 0 0;
+    font-size: 2.2em;
     font-weight: 200;
+    line-height: 0.85em;
   }
 
-  .hero-section p, .blog-post {
-    width: 80%;
+  .post-text {
     font-size: 0.9em;
     font-weight: 200;
     line-height: 1.5em;
     padding-bottom: 1.5em;
   }
 
-  .blog {
-    flex-direction: column-reverse;
-  }
-
-  .blog .blog-heading {
-    margin: 1em 0 0;
-  }
-
-  .blog-image {
+  .post-image {
     width: 100%;
   }
 
   .news {
-    background-color: #fff;
+    background-color: #fff; 
   }
 
-  .news .blog-heading {
+  .news-post {
+    padding-bottom: 5%;
+  }
+
+  .news .post-heading {
     margin-top: 1.5em;
     color: #000;
     font-size: 1.5em;
     font-weight: 300;
   }
 
-  .news .blog-post {
+  .news .post-text {
     margin-top: auto;
     color: #000;
     font-size: 1em;
@@ -139,17 +139,70 @@ body {
   
   .post-time {
     text-align: center;
-    align-self: flex-end;
-    justify-self: flex-start;
-    margin-top: 0.5em;
-    font-size: 4em;
-    width: 2em;
+    font-size: 3em;
     font-weight: 200;
     line-height: 0.7em;
+    grid-area: time;
+    opacity: 0.3;
   }
 
   .post-time > span {
     font-size: 0.5em;
+  }
+
+  .post-inner {
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 5% 40% 40%;
+    grid-template-areas: 
+      ". . ."
+      ". heading ."
+      ". post .";
+  }
+
+  .blog .post-inner {
+    grid-template-columns: 5% auto 17%;
+    grid-template-areas: 
+      ". . . "
+      ". heading time"
+      ". post .";
+  }
+
+  .post-5 .post-inner {
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 5% 25% auto auto;
+    grid-template-areas: 
+      ". . . "
+      ". heading ."
+      ". post ."
+      ". time time";
+  }
+
+  .post-5 .post-time {
+    margin: 0 32%;
+    width: 2em; 
+    height: 2em;
+  }
+
+  .post-heading {
+    grid-area: heading;
+  }
+
+  .post-text {
+    grid-area: post;
+    opacity: 0.7;
+  }
+
+  .footer {
+    background-color: #024161;
+    margin: 35px 0 5px;
+    padding: 2em;
+  }
+
+  .footer .post-text {
+    margin: 0 auto;
+    padding: 0.1em;
+    text-align: center;
   }
 }
 
