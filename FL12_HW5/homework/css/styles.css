@@ -36,175 +36,235 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
-  body {
-    margin: 0 2% 0;
+.header {
+  grid-area: header;
+}
+
+.hero-section {
+  grid-area: heroSection;
+}
+
+.blog {
+  grid-area: blog;
+}
+
+.news {
+  grid-area: news;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.header {
+  background-color: #024161;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.menu {
+  margin: auto; 
+  padding-top: 8%;
+  width: 18px;
+  height: 15px;
+}
+
+.menu:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  box-shadow: 0 4px 1px 0 rgba(255, 255, 255, 0.5),
+              0 8px 0 0 rgba(255, 255, 255, 0.7);
+}
+
+.menu-link {
+  display: none;
+}
+
+.header-heading {
+  text-align: center;
+  padding: 10% 0 10%;
+  letter-spacing: -2px;
+  font-weight: 300;
+}
+
+.blog .post, .news {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.header-heading span {
+  font-weight: 200;
+  color: #d12767;
+}
+
+.hero-section {
+  background: url('../img/post0.jpg') no-repeat center;
+  width: 100%;
+  padding: 10% 0 10%;
+  margin-bottom: 15px;
+}
+
+.post-heading {
+  margin: 0.5em 0 0;
+  font-size: 2.2em;
+  font-weight: 200;
+  line-height: 0.85em;
+}
+
+.post-text {
+  font-size: 0.9em;
+  font-weight: 200;
+  line-height: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.news-post {
+  padding-bottom: 5%;
+  background-color: #fff; 
+}
+
+.news .post-heading {
+  margin-top: 1.5em;
+  color: #000;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.news .post-text {
+  margin-top: auto;
+  color: #000;
+  font-size: 1em;
+}
+
+.post-time {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 200;
+  line-height: 0.7em;
+  grid-area: postTime;
+  opacity: 0.3;
+}
+
+.post-time > span {
+  font-size: 0.5em;
+}
+
+.post-inner {
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 5% 40% 40%;
+  grid-template-areas: 
+    ". . ."
+    ". postHeading ."
+    ". postPost .";
+}
+
+.blog .post-inner {
+  grid-template-columns: 5% auto 17%;
+  grid-template-areas: 
+    ". . . "
+    ". postHeading postTime"
+    ". postPost .";
+}
+
+.post-5 .post-inner {
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 5% 25% auto auto;
+  grid-template-areas: 
+    ". . . "
+    ". postHeading ."
+    ". postPost ."
+    ". postTime postTime";
+}
+
+.post-5 .post-time {
+  margin: 0 32%;
+  width: 2em; 
+  height: 2em;
+}
+
+.post-heading {
+  grid-area: postHeading;
+}
+
+.post-text {
+  grid-area: postPost;
+  opacity: 0.7;
+}
+
+.footer {
+  background-color: #024161;
+  margin-bottom: 5px;
+  padding: 2em;
+}
+
+.footer .post-text {
+  margin: 0 auto;
+  padding: 0.1em;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  main {
     display: grid;
-    grid-template-columns: 100%;
-  }
-
-  .blog .post, .news {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-  }
-
-  .header {
-    background-color: var(--bg-color--header);
-    margin-bottom: 15px;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+      "heroSection heroSection"
+      "blog news"
   }
 
   .menu {
-    margin: auto; 
-    padding-top: 8%;
-    width: 18px;
-    height: 15px;
-  }
-
-  .menu:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    box-shadow: 0 4px 1px 0 rgba(255, 255, 255, 0.5),
-                0 8px 0 0 rgba(255, 255, 255, 0.7);
-  }
-
-  .menu-link {
-    display: none;
+    padding-top: 4%;
   }
 
   .header-heading {
-    text-align: center;
-    padding: 10% 0 10%;
-    letter-spacing: -2px;
-    font-weight: 300;
-  }
-
-  .header-heading span {
-    font-weight: 200;
-    color: #d12767;
-  }
-
-  .hero-section {
-    background: url('../img/post0.jpg') no-repeat center;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    padding: 10% 0 10%;
-    margin-bottom: 15px;
-  }
-
-  .post-heading {
-    margin: 0.5em 0 0;
-    font-size: 2.2em;
-    font-weight: 200;
-    line-height: 0.85em;
-  }
-
-  .post-text {
-    font-size: 0.9em;
-    font-weight: 200;
-    line-height: 1.5em;
-    padding-bottom: 1.5em;
-  }
-
-  .post-image {
-    width: 100%;
+    padding: 5% 0 5%;
   }
 
   .news {
-    background-color: #fff; 
+    justify-content: flex-start;
   }
 
   .news-post {
-    padding-bottom: 5%;
-  }
-
-  .news .post-heading {
-    margin-top: 1.5em;
-    color: #000;
-    font-size: 1.5em;
-    font-weight: 300;
-  }
-
-  .news .post-text {
-    margin-top: auto;
-    color: #000;
-    font-size: 1em;
-  }
-  
-  .post-time {
-    text-align: center;
-    font-size: 3em;
-    font-weight: 200;
-    line-height: 0.7em;
-    grid-area: time;
-    opacity: 0.3;
-  }
-
-  .post-time > span {
-    font-size: 0.5em;
-  }
-
-  .post-inner {
-    display: grid;
-    grid-template-columns: 5% auto 5%;
-    grid-template-rows: 5% 40% 40%;
-    grid-template-areas: 
-      ". . ."
-      ". heading ."
-      ". post .";
-  }
-
-  .blog .post-inner {
-    grid-template-columns: 5% auto 17%;
-    grid-template-areas: 
-      ". . . "
-      ". heading time"
-      ". post .";
-  }
-
-  .post-5 .post-inner {
-    grid-template-columns: 5% auto 5%;
-    grid-template-rows: 5% 25% auto auto;
-    grid-template-areas: 
-      ". . . "
-      ". heading ."
-      ". post ."
-      ". time time";
-  }
-
-  .post-5 .post-time {
-    margin: 0 32%;
-    width: 2em; 
-    height: 2em;
-  }
-
-  .post-heading {
-    grid-area: heading;
-  }
-
-  .post-text {
-    grid-area: post;
-    opacity: 0.7;
+    margin-left: 4%;
+    margin-bottom: 6%;
   }
 
   .footer {
-    background-color: #024161;
-    margin: 35px 0 5px;
-    padding: 2em;
-  }
-
-  .footer .post-text {
-    margin: 0 auto;
-    padding: 0.1em;
-    text-align: center;
+    margin-top: 4%;
   }
 }
 
+@media screen and (max-width: 480px) {
+  body {
+    display: block;
+    margin: 0 2% 0;
+    width: 96%;
+  }
 
+  main {
+    display: block;
+  }
 
+  .news {
+    padding: 10% 0 10%;
+  }
+
+  .news-post {
+    margin: auto;
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+}
