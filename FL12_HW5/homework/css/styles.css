@@ -15,9 +15,19 @@ body {
   font-size: 1.0em;
   background-color: #0b192f;
   color: #fff;
+  margin: 0 8px 8px;
 }
+
+main {
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-template-areas: 
+    "heroSection heroSection"
+    "blog news"
+}
+
 .post-1 {
-	background: #9d27b0;
+  background: #9d27b0;
 }
 .post-2 {
 	background: #9bb800;
@@ -90,6 +100,11 @@ body {
   font-weight: 300;
 }
 
+.header-heading span {
+  font-weight: 200;
+  color: #d12767;
+}
+
 .blog .post, .news {
   display: flex;
   flex-direction: column;
@@ -98,43 +113,48 @@ body {
   width: 100%;
 }
 
-.header-heading span {
-  font-weight: 200;
-  color: #d12767;
-}
-
 .hero-section {
   background: url('../img/post0.jpg') no-repeat center;
+  background-size: cover;
   width: 100%;
-  padding: 10% 0 10%;
+  padding: 10% 5% 10%;
   margin-bottom: 15px;
-}
-
-.post-heading {
-  margin: 0.5em 0 0;
-  font-size: 2.2em;
-  font-weight: 200;
-  line-height: 0.85em;
-}
-
-.post-text {
-  font-size: 0.9em;
-  font-weight: 200;
-  line-height: 1.5em;
-  padding-bottom: 1.5em;
 }
 
 .post-image {
   width: 100%;
 }
 
+.post-heading {
+  margin: 0.5em 0;
+  font-size: 2.5em;
+  font-weight: 200;
+  line-height: 0.85em;
+  grid-area: postHeading;
+}
+
+.post-text {
+  font-size: 0.9em;
+  font-weight: 200;
+  line-height: 1.5em;
+  grid-area: postPost;
+  opacity: 0.7;
+}
+
 .news-post {
   padding-bottom: 5%;
+  margin-left: 4%;
+  margin-bottom: 6%;
   background-color: #fff; 
 }
 
+.news .post-inner {
+  padding: 10%;
+  grid-template-rows: 25% auto;
+}
+
 .news .post-heading {
-  margin-top: 1.5em;
+  /* margin-top: 1.5em; */
   color: #000;
   font-size: 1.5em;
   font-weight: 300;
@@ -143,12 +163,12 @@ body {
 .news .post-text {
   margin-top: auto;
   color: #000;
-  font-size: 1em;
 }
 
 .post-time {
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
+  max-width: 2em;
   font-weight: 200;
   line-height: 0.7em;
   grid-area: postTime;
@@ -161,45 +181,19 @@ body {
 
 .post-inner {
   display: grid;
-  grid-template-columns: 5% auto 5%;
-  grid-template-rows: 5% 40% 40%;
+  grid-template-columns: auto;
+  grid-template-rows: 40% auto;
   grid-template-areas: 
-    ". . ."
-    ". postHeading ."
-    ". postPost .";
+    "postHeading"
+    "postPost";
 }
 
 .blog .post-inner {
-  grid-template-columns: 5% auto 17%;
+  padding: 5% 2% 0% 5%;
+  grid-template-columns: auto 6% 11%;
   grid-template-areas: 
-    ". . . "
-    ". postHeading postTime"
-    ". postPost .";
-}
-
-.post-5 .post-inner {
-  grid-template-columns: 5% auto 5%;
-  grid-template-rows: 5% 25% auto auto;
-  grid-template-areas: 
-    ". . . "
-    ". postHeading ."
-    ". postPost ."
-    ". postTime postTime";
-}
-
-.post-5 .post-time {
-  margin: 0 32%;
-  width: 2em; 
-  height: 2em;
-}
-
-.post-heading {
-  grid-area: postHeading;
-}
-
-.post-text {
-  grid-area: postPost;
-  opacity: 0.7;
+    "postHeading . postTime"
+    "postPost postPost .";
 }
 
 .footer {
@@ -212,17 +206,132 @@ body {
   margin: 0 auto;
   padding: 0.1em;
   text-align: center;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    width: 96%;
+    margin: 0 2%;
+  }
+  
+  .header {
+    box-sizing: padding-box;
+    max-width: 1400px;
+    width: auto;
+    margin: 0 auto 15px;
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: flex;
+    margin: auto 0;
+    width: auto;
+    height: auto;
+    padding: 0 5%;
+  }
+
+  .menu-link {
+    display: block;
+    margin-right: 2em;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .menu::after {
+    display: none;
+  }
+
+  .header-heading {
+    padding: 0 30px;
+  }
+
+  main {
+    max-width: 1400px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    padding: 20% 5% 5%;
+    width: auto;
+  }
+
+  .hero-section .post-inner {
+    grid-template-columns: 70%;
+  }
+
+  .news {
+    justify-content: flex-start;
+  }
+
+  .blog .post {
+    flex-direction: row;
+    max-height: 21vw;
+  }
+
+  .blog .post-image {
+    max-height: 21vw;
+    object-fit: cover;
+  }
+
+  .blog .post-inner {
+    width: 88%;
+    padding: 1% 2% 0 5%;
+    grid-template-rows: 45% auto;
+  }
+
+  .blog .post-heading {
+    font-size: 1.75em;
+  }
+
+  .blog .post-text {
+    margin: 0;
+    font-size: 0.7em;
+  }
+
+  .hero-section .post-text, .news .post-text, .footer .post-text {
+    font-size: 0.7em;
+  }
+
+  .post-time {
+    font-size: 2em;
+  }
+
+  .blog .post:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .blog .post:nth-child(even) .post-inner {
+    padding: 1% 5% 0 2%;
+    grid-template-columns: 10% 7% auto;
+    grid-template-areas: 
+      "postTime postTime postHeading"
+      ". postPost postPost";
+  }
+
+  .blog .post-5 {
+    flex-direction: column;
+  }
+
+  .footer {
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 25px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-block .post-text {
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  main {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-areas: 
-      "heroSection heroSection"
-      "blog news"
-  }
-
   .menu {
     padding-top: 4%;
   }
@@ -231,13 +340,34 @@ body {
     padding: 5% 0 5%;
   }
 
-  .news {
-    justify-content: flex-start;
+  .hero-section {
+    padding: 20% 5% 5%;
+    width: 90%;
   }
 
-  .news-post {
-    margin-left: 4%;
-    margin-bottom: 6%;
+  .hero-section .post-inner {
+    grid-template-rows: 40% 35% auto;
+  }
+
+  .post-5 .post-inner {
+    padding: 5%;
+    grid-template-columns: auto;
+    grid-template-rows: 35% auto;
+    grid-template-areas: 
+      "postHeading"
+      "postPost"
+      "postTime";
+  }
+  
+  .post-5 .post-time {
+    padding-top: 0.75em;
+    margin: 0 auto;
+    width: 2em; 
+    height: 1.5em;
+  }
+
+  .news {
+    justify-content: flex-start;
   }
 
   .footer {
@@ -257,14 +387,19 @@ body {
   }
 
   .news {
-    padding: 10% 0 10%;
+    margin: 10% 0 10%;
   }
 
+  .news .post-inner {
+    padding: 5%;
+    grid-template-rows: 40% auto;
+  }
+  
   .news-post {
     margin: auto;
   }
 
   .footer {
-    margin-top: 0;
+    margin-top: 20px;
   }
 }
