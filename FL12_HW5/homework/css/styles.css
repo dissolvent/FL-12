@@ -106,7 +106,7 @@ main {
 
 .post-heading {
   grid-area: postHeading;
-  margin: 0.5em 0;
+  margin: 0.2em 0;
   font-size: 2.5em;
   font-weight: 200;
   line-height: 0.85em;
@@ -193,7 +193,7 @@ main {
   opacity: 0.3;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768.1px) {
   body {
     width: 96%;
     margin: 0 2%;
