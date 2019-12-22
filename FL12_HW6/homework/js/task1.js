@@ -2,13 +2,12 @@
 
 let a, b, c, discriminant;
 
-
 a = prompt('Enter "a" value');
 b = prompt('Enter "b" value');
 c = prompt('Enter "c" value');
 
 for (let num of [a, b, c]) {
-    if (num === null || num === '' || isNaN(num) || a === 0) {
+    if (num === null || num === '' || isNaN(num) || +a === 0) {
         console.log('Invalid input data');
     } else {
         discriminant = Math.pow(b, 2) - 4 * a * c;
