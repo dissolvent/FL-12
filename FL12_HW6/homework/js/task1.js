@@ -6,7 +6,7 @@ a = prompt('Enter "a" value');
 b = prompt('Enter "b" value');
 c = prompt('Enter "c" value');
 
-if (isNaN(a) || isNaN(b) || isNaN(c) || !a || !b || !c || +a === 0) {
+if ([a, b, c].some(isNaN) || !a || !b || !c || +a === 0) {
     console.log('Invalid input data');
 } else {
     discriminant = Math.pow(b, 2) - 4 * a * c;
