@@ -16,7 +16,7 @@ if ([a, b, c].some(isNaN) || !a || !b || !c || +a === 0) {
         let x2 = Number( ( (-b - Math.sqrt(discriminant)) / (2 * a) ).toFixed(2));
         console.log(`x1 = ${x1} and x2 = ${x2}`);
     } else if (discriminant === 0) {
-        let x = Math.round(-b / (2 * a));
+        let x = Number( (-b / (2 * a) ).toFixed(2) );
         console.log(`x = ${x}`);
     } else {
         console.log('no solution');
