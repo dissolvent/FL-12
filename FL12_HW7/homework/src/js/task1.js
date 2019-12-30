@@ -2,7 +2,7 @@
 
 let users = {
   'user@gmail.com': 'UserPass',
-  'admin@gmail.com': 'AdminPass',
+  'admin@gmail.com': 'AdminPass'
 }
 
 let userEmail = prompt('Enter your email', '');
@@ -51,8 +51,7 @@ if (logged) {
         let confirmPassword = prompt('Enter new password again');
         if (confirmPassword !== userPassword) {
           alert('You wrote the wrong password.');
-        }
-        else {
+        } else {
           alert('You have successfully changed your password.');
           users[userEmail] = userPassword;
         }

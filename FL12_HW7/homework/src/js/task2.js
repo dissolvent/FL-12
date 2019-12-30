@@ -11,7 +11,7 @@ let startGame = confirm('Do you want to play a game?');
 
 if (!startGame) {
   alert('You did not become a billionaire, but can.');
-};
+}
 
 while (startGame) {
 
@@ -43,7 +43,7 @@ while (startGame) {
       let currentPrize = prizes[currentAttempt - 1];
       continueGame = confirm(`Congratulation, you won!   Your prize is: ${currentPrize}$. Do you want to continue?`);
       totalPrize += currentPrize;
-    };
+    }
 
     if (!continueGame || randomPocket !== userPocketGuess) {
       alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
