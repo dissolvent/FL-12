@@ -8,3 +8,7 @@ function pipe(value, ...args) {
   }
   return value;
 }
+
+pipe(1, addOne);
+pipe(1, addOne, addOne);
+pipe(1, addOne, addOne, addOne);

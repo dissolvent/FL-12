@@ -9,3 +9,7 @@ function makeNumber(inputString) {
     
     return output;
 }
+
+makeNumber('erer384jjjfd123');
+makeNumber('123098h76gfdd');
+makeNumber('ijifjgdj');

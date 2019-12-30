@@ -20,3 +20,6 @@ function countNumbers(inputString) {
 
     return numberOfOccurrences;
 }
+
+countNumbers('erer384jj4444666888jfd123');
+countNumbers('jdjjka000466588kkkfs662555');
