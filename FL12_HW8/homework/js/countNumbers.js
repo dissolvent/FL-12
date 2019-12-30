@@ -6,17 +6,17 @@ function makeNumber(inputString) {
             output += char;
         }
     }
-    
+
     return output;
 }
 
 function countNumbers(inputString) {
     let numbers = makeNumber(inputString);
-    let numCount = {};
+    let numberOfOccurrences = {};
 
     for (let num of numbers) {
-        numCount[num] = numCount[num] ? numCount[num] + 1 : 1;
+        numberOfOccurrences[num] = numberOfOccurrences[num] ? numberOfOccurrences[num] + 1 : 1;
     }
 
-    return numCount;
+    return numberOfOccurrences;
 }
