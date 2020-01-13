@@ -1,3 +1,5 @@
+const MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000;
+
 function convert(...args) {
   let convertedArgs = [];
 
@@ -72,6 +74,16 @@ function substitute(arr) {
   return mapArray(arr, item => item < 30 ? '*' : item);
 }
 
+
+function getPastDay(date, daysAgo) {
+  return new Date(date - daysAgo * MILLISECONDS_IN_DAY).getDate();
+}
+
+function formatDate(date) {
+  let hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${hours}:${date.getMinutes()}`
+}
+
 console.log(`1: convert(1, '2', 3, '4') should return ["1", 2, "3", 4]`, convert(1, '2', 3, '4'));
 
 console.log(`2: executeForEach([1, 2, 3], function(el) {console.log(el * 2)}) should log 2 4 6)`);
@@ -98,3 +110,8 @@ console.log(getArrayOfKeys(actors, 'name'));
 
 console.log(`8: substitute([58, 14, 48, 2, 31, 29]); should return [58, '*', 48, '*', 31, '*']`);
 console.log(substitute([58, 14, 48, 2, 31, 29]));
+
+const date = new Date(2019, 0, 2);
+console.log(`9: getPastDay(date, 1); // 1`, getPastDay(date, 1));
+console.log(`9: getPastDay(date, 2); // 31`, getPastDay(date, 2));
+console.log(`9: getPastDay(date, 365); // 2`, getPastDay(date, 365));
