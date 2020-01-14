@@ -6,27 +6,24 @@ function convert(...args) {
   for (let i of args) {
     convertedArgs.push(typeof i === 'string' ? Number(i) : String(i))
   }
+
   return convertedArgs;
 }
-
 
 function executeForEach(arr, func) {
   for (let i of arr) {
     func(i);
   }
+
   return;
 }
 
-
 function mapArray(arr, func) {
   let transformedArray = [];
-  
   executeForEach(arr, item => transformedArray.push(
-    func(parseInt(item))));
-
+    func(parseInt(item)) ));
   return transformedArray;
 }
-
 
 function filterArray(arr, func) {
   let filteredArray = []
@@ -40,7 +37,6 @@ function filterArray(arr, func) {
   return filteredArray;
 }
 
-
 function flipOver(str) {
   let reversed = '';
 
@@ -51,17 +47,15 @@ function flipOver(str) {
   return reversed;
 }
 
-
 function makeListFromRange([start, stop]) {
   let range = [];
 
   for (start; start <= stop; start++) {
     range.push(start);
   }
-
+  
   return range;
 }
-
 
 function getArrayOfKeys(arr, key) {
   let keysArray = [];
@@ -69,11 +63,9 @@ function getArrayOfKeys(arr, key) {
   return keysArray;
 }
 
-
 function substitute(arr) {
   return mapArray(arr, item => item < 30 ? '*' : item);
 }
-
 
 function getPastDay(date, daysAgo) {
   return new Date(date - daysAgo * MILLISECONDS_IN_DAY).getDate();
