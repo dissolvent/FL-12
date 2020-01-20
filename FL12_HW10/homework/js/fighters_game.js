@@ -87,25 +87,18 @@ function Fighter(character) {
 }
 
 function battle(fighter1, fighter2) {
-  if (![fighter1, fighter2].some(canFight)) {
+  if (![fighter1, fighter2].every(canFight)) {
     return;
   }
-  while (fighter1.getHealth() && fighter2.getHealth()) {
-    fighter1.attack(fighter2);
-    if (fighter2.getHealth()) {
-      fighter2.attack(fighter1);
-    } else {
-      fighter1.addWin();
-      fighter2.addLoss();
-      return `${fighter1.getName()} has won!`;
-    }
-    if (!fighter1.getHealth()) {
-      fighter1.addLoss();
-      fighter2.addWin();
-      return `${fighter2.getName()} has won!`;
-    }
+  fighter1.attack(fighter2);
+  if (fighter2.getHealth()) {
+    battle(fighter2, fighter1);
+  } else {
+    fighter1.addWin();
+    fighter2.addLoss();
+    console.log(`${fighter1.getName()} has won!`);
+    return;
   }
-  return;
 }
 
 function canFight(fighter) {
@@ -116,7 +109,6 @@ function canFight(fighter) {
   return true;
 }
   
-
 const max = new Fighter({name: 'Maximus', damage: 25, hp: 100, strength: 25, agility: 25});
 const maxDopler = new Fighter({name: 'Maximus_dopler', damage: 25, hp: 100, strength: 25, agility: 25});
 const com = new Fighter({name: 'Commodus', damage: 15, hp: 100, strength: 20, agility: 15});
