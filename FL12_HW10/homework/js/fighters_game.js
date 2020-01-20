@@ -4,11 +4,6 @@ function Fighter(character) {
   stats.wins = 0;
   stats.losses = 0;
 
-  // !!! delete this
-  this.getStats = function () {
-    return stats;
-  }
-
   this.getName = function () {
     return stats.name;
   }
@@ -59,7 +54,7 @@ function Fighter(character) {
     if (heal < 0) {
       return `healing can't be negative`
     }
-    let healing = stats.hp + heal
+    let healing = stats.hp + heal;
     stats.hp = healing <= stats.maxHp ? healing : stats.maxHp;
   }
 
@@ -81,8 +76,7 @@ function Fighter(character) {
   }
 
   Fighter.attackSuccess = function(defense) {
-    let attackChance = 100 - defense;
-    return parseInt(Math.random() * 100) < attackChance;
+    return parseInt(Math.random() * 100) > defense;
   }
 }
 
@@ -102,25 +96,9 @@ function battle(fighter1, fighter2) {
 }
 
 function canFight(fighter) {
-  if (fighter.getHealth() === 0) {
+  if (!fighter.getHealth()) {
     console.log(`${fighter.getName()} is dead and can't fight`);
     return false;
   }
   return true;
 }
-  
-const max = new Fighter({name: 'Maximus', damage: 25, hp: 100, strength: 25, agility: 25});
-const maxDopler = new Fighter({name: 'Maximus_dopler', damage: 25, hp: 100, strength: 25, agility: 25});
-const com = new Fighter({name: 'Commodus', damage: 15, hp: 100, strength: 20, agility: 15});
-
-function test() {
-  for (let i = 0; i < 1000; i++) {
-    battle(max, maxDopler);
-    max.heal(100);
-    maxDopler.heal(100);
-  }
-
-  max.logCombatHistory();
-  maxDopler.logCombatHistory();
-}
-
