@@ -50,7 +50,7 @@ function buildTree(structure, parentNode) {
     captureArea.setAttribute('class', 'capture-area');
     icon.setAttribute('class', 'material-icons');
 
-    function addInsertion(nodeText, iconText) {
+    let addInsertion = function(nodeText, iconText) {
       icon.textContent = iconText;
       captureArea.appendChild(icon);
       captureArea.innerHTML += nodeText;
