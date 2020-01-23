@@ -37,4 +37,56 @@ const structure = [
 
 const rootNode = document.getElementById('root');
 
-// Todo: your code goes here
+function buildTree(structure, parentNode) {
+  let parent = parentNode.appendChild(
+    document.createElement('ul')
+  );
+
+  for (let item of structure) {
+
+    let child = document.createElement('li');
+    let captureArea = document.createElement('div');
+    let icon = document.createElement('i');
+    captureArea.setAttribute('class', 'capture-area');
+    icon.setAttribute('class', 'material-icons');
+
+    function addInsertion(nodeText, iconText) {
+      icon.textContent = iconText;
+      captureArea.appendChild(icon);
+      captureArea.innerHTML += nodeText;
+      child.appendChild(captureArea);
+      parent.appendChild(child);
+    }
+
+    if (item.folder) {
+      child.setAttribute('class', 'folder collapsed');
+      captureArea.addEventListener('click', toggleFolder);
+      addInsertion(item.title, 'folder');
+    } else {
+      child.setAttribute('class', 'file');
+      addInsertion(item.title, 'insert_drive_file');
+    }
+    if (item.children) {
+      buildTree(item.children, child);
+    }
+    if (item.folder && !item.children) {
+      let span = document.createElement('span');
+      span.textContent = 'Folder is empty';
+      child.appendChild(span);
+    }
+  }
+}
+
+function toggleFolder(node) {
+  let classes = node.srcElement.parentNode.classList;
+  let icon = node.srcElement.children;
+  if (classes.contains('collapsed')) {  
+    classes.remove('collapsed') 
+    icon.item('material-icons').textContent = 'folder_open';
+  } else {
+    classes.add('collapsed');
+    icon.item('material-icons').textContent = 'folder';
+  }
+}
+
+buildTree(structure, rootNode);

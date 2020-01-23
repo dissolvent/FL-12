@@ -1,1 +1,33 @@
-/* Todo: your styles go here*/
+.collapsed li:nth-child(n), .collapsed span:nth-child(n) {
+  display: none;
+}
+
+.capture-area:hover {
+  background-color: #efefef;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.material-icons {
+  font-size: 20px;
+  vertical-align: bottom;
+}
+
+.file .capture-area .material-icons {
+  color: #bbbbbb;
+}
+
+.folder .material-icons {
+  color: #edbc0b;
+}
+
+.folder span {
+  font-style: italic;
+}
