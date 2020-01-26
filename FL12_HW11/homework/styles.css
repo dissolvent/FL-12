@@ -18,14 +18,11 @@ li {
 .material-icons {
   font-size: 20px;
   vertical-align: bottom;
-}
-
-.file .capture-area .material-icons {
-  color: #bbbbbb;
-}
-
-.folder .material-icons {
   color: #edbc0b;
+}
+
+.file .material-icons {
+  color: #bbbbbb;
 }
 
 .folder span {
