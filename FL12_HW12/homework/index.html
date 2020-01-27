@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework 12 - Simple TODO List</title>
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
+
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="main" class="page active">
+      <h1>Main page</h1>
+        <button id='add-set' class='navigation-buttons' data-hash='/add'>Add new</button>
+    </div>
+
+    <div id="/add" class="page">
+      <h1>Add new set</h1>
+      <input type="text" id='set-name' placeholder='Enter set name'>
+      <button id='add-add-terms'>Add terms</button>
+      <button id='add-save-set' data-hash=''>Save changes</button>
+      <button id='add-cancel' class='navigation-buttons' data-hash=''>Cancel</button>
+      <div id="terms">
+      </div>
+    </form>
+    </div>
+
+    <div id="modify" class="page">
+      <h1>Modify set</h1>
+    </div>
+  </div>
 
   <script src="./src/app.js"></script>
 </body>
+
 </html>

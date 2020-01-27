@@ -1,2 +1,31 @@
-/* Your styles go here */
+#root {
+  width: 50%;
+  margin: 0 auto;
+}
 
+#add-set {
+  position: absolute;
+  top: 20px;
+  right: 25%;
+  width: 150px;
+  height: 50px;
+}
+
+.page:not(.active) {
+  display: none;
+}
+
+#terms {
+  padding-top: 10px;
+}
+
+.term-input {
+  margin-right: 4px;
+  margin-top: 4px;
+}
+
+.set {
+  background-color: darkgrey;
+  margin: 5px auto;
+  padding: 5px 0;
+}
