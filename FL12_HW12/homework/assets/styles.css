@@ -24,8 +24,12 @@
   margin-top: 4px;
 }
 
-.set {
-  background-color: darkgrey;
+.set > div {
+  background-color: rgb(228, 255, 205);
   margin: 5px auto;
   padding: 5px 0;
+}
+
+.set > .completed {
+  background-color: darkgray;
 }
