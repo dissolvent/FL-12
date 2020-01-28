@@ -121,14 +121,16 @@ function toModify(event) {
   }
 
   function getSetId() {
-    return nextSetID += 1;
+    nextSetID += 1
+    return nextSetID;
   }
 
   function getSetTerms(htmlCollection) {
     let setMap = [];
     for (let term of htmlCollection) {
+      const zero = 0;
       setMap.push({
-        termName: term.children[0].value,
+        termName: term.children[zero].value,
         termDefinition: term.children[1].value
       });
     }
@@ -220,7 +222,8 @@ function toModify(event) {
   }
 
   function sortSets(set) {
-    completedSets.push(setList.splice(setList.indexOf(set), 1)[0]);
+    const zero = 0;
+    completedSets.push(setList.splice(setList.indexOf(set), 1)[zero]);
   }
 
   function displayModifySet(setID, completed) {
